@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../js/category.js"></script>
+<title>添加商品</title>
+</head>
+<body>
+<form action="../../createItem.action" method="post">
+	<table id="tab01" class="table">
+		<tr>
+			<th>商品名</th>
+			<th>商品类别</th>
+			<th>商品价格</th>
+			<th>商品单位</th>
+			<th>生产日期</th>
+			<th>保质期</th>
+			<th>供货商名</th>
+			<th>描述信息</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td><input class="form-control" type="text" name="itemName"/></td>
+			<td>
+				<select class="form-control" name ="category">
+				</select>
+			</td>
+			<td><input class="form-control" type="number" name="price"/></td>
+			<td><input class="form-control" type="text" name="unit"/></td>
+			<td><input class="form-control" type="date" name="productionDate"/></td>
+			<td><input class="form-control" type="date" name="expiryDate"/></td>
+			<td><input class="form-control" type="text" name="supplier"/></td>
+			<td><input class="form-control" type="text" name="information"/></td>
+			<td><button type="submit" class="btn btn-default" name="createitem" >提交</button></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

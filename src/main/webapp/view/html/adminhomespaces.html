@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>主页</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet"
+	href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
+<script
+	src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../js/item.js"></script>
+</head>
+<body>
+	<button name="deleteItems" class="btn">批量删除</button>
+	<button name="createItem" class="btn">添加商品</button>
+	<a class="btn" href="../../outputExcel.action">导出excile文档</a>
+	<a class="btn" href="./category.html">商品类别管理</a>
+	<a class="btn" href="./banner.html">轮播图片管理</a>
+	<form id="form" method="post">
+		<table id="tab01" class="table">
+			<tr>
+				<th class = delete style="display:none;">编辑</th>
+				<th>商品图片</th> 
+				<th>商品名</th>
+				<th>商品类别</th>
+				<th>商品价格</th>
+				<th>商品单位</th>
+				<th>生产日期</th>
+				<th>保质期</th>
+				<th>供货商名</th>
+				<th>描述信息</th>
+				<th>操作</th>
+			</tr>
+		</table>
+	</form>
+	<button name='delete' style="display: none;" type="submit" form="form"
+		class="btn" formaction="../../deleteitem.action">删除</button>
+	<section id="updateModalSection">
+	<div class="modal" id="updateItemsModal">
+		<!--最外层容器层modal，show代表默认显示-->
+		<div class="modal-dialog">
+			<!--第二层对话框层modal-dialog-->
+			<div class="modal-content">
+				<!--第三层内容层modal-content-->
+				<form action="../../updateItem.action" method="post">
+					<div class="modal-header">
+						<!--第四层头层modal-header-->
+						<button class="close" data-dismiss="modal">&times;</button>
+						<h3 class="modal-title">修改商品信息</h3>
+						<!--第五层标题modal-title，一般使用H#-->
+					</div>
+					<div class="modal-body"></div>
+					<div class="modal-footer">
+						<button type="reset" class="btn btn-info">重置</button>
+						<button type="submit" class="btn btn-danger">确认</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="photoSection">
+	<div class="modal" id="showPhotoModal">
+		<!--最外层容器层modal，show代表默认显示-->
+		<div class="modal-dialog">
+			<!--第二层对话框层modal-dialog-->
+			<div class="modal-content">
+				<!--第三层内容层modal-content-->
+				<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+					<!--第四层头层modal-header-->
+					<h3 class="modal-title">图片信息</h3>
+				</div>
+				<div class="modal-body"></div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+	</section>
+</body>
+</html>

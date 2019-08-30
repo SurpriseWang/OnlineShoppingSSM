@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<context:component-scan
+		base-package="com.wang.controller" /><!-- 注解包扫描包 -->
+	<mvc:annotation-driven /><!-- 注解驱动 -->
+	<!-- 视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/view/html/" />
+		<property name="suffix" value=".html" />
+	</bean>
+	<!-- id固定 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="-117367648787"></property><!-- 文件大小最大值，-1表示无限制 -->
+		<property name="maxInMemorySize" value="40960"></property><!-- 内存中的最大值 -->
+		<property name="defaultEncoding" value="UTF-8"></property>
+	</bean>
+</beans>
